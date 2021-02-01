@@ -1,0 +1,81 @@
+.g-home {
+  .p-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid #ccc;
+    background-color: rgba(113, 26, 226, 0.2);
+    .header-title {
+      font-size: 24px;
+    }
+    .header-button {
+      span {
+        margin-left: 20px;
+      }
+      .manage {
+        margin-right: 40px;
+      }
+      .file {
+        position: absolute;
+        right: 0px;
+        top: 0;
+        width: 60px;
+        line-height: 60px;
+        text-align: center;
+        color: #1890ff;
+      }
+      .file input {
+        position: absolute;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        line-height: 60px;
+        width: 60px;
+      }
+      .file:hover {
+        color: #ff004c;
+        cursor: pointer;
+      }
+    }
+  }
+  .p-book-list {
+    padding: 20px;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    .book-item {
+      position: relative;
+      width: 140px;
+      margin: 0 10px 20px 10px;
+      .i-top-bg {
+        width: 100%;
+        height: 180px;
+        border: 1px solid #000;
+        text-align: center;
+        .i-top-name {
+          height: 120px;
+          margin-top: 20px;
+          font-size: 20px;
+          font-weight: 500;
+          color: #fff;
+        }
+        .i-top-author {
+          font-size: 14px;
+          color: rgb(240, 240, 240);
+        }
+      }
+      .i-delete {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        line-height: 180px;
+        background-color: rgba($color: #fff, $alpha: 0.5);
+      }
+    }
+  }
+}

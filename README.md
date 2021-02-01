@@ -1,2 +1,3 @@
-# chat-client-pc
-简易聊天pc界面
+# run electron
+1 yarn start
+2 yarn ele

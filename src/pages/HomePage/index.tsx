@@ -20,7 +20,7 @@ const connect1: any = connect;
 class HomePage extends Component<IProps, IState> {
 
   state: IState = {
-    value: 'name'
+    value: 'ggg'
   }
 
   onJoin = () => {

@@ -1,5 +1,5 @@
 declare module 'redux-persist/es/integration/react';
-
+// declare module 'socket.io-client';
 interface IBookData {
   id: string | number; //唯一标识
   name: string; //名称

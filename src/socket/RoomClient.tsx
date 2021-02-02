@@ -1,5 +1,6 @@
 import io from 'socket.io-client';
 import { EventEmitter } from 'events';
+import { message } from 'antd';
 
 export interface IChat {
   username: string;
@@ -114,11 +115,14 @@ export default class RoomClient extends EventEmitter {
   }
 
   async onNewUser(user: IUser) {
+    message.info(`${user.username} 加入房间`);
     this.users[user.id] = user;
     this.emit('updateUser')
   }
 
   async onUserClosed(id: string) {
+    const user = this.users[id];
+    message.info(`${user.username} 离开房间`);
     delete this.users[id];
     this.emit('updateUser')
   }

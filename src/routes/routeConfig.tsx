@@ -1,6 +1,6 @@
 import { RouteProps } from 'react-router-dom';
 import {
-  HomePage, ChatPage
+  HomePage, ChatPage, Chat2Page
 } from 'pages';
 import pathConfig from './pathConfig';
 
@@ -13,6 +13,11 @@ const routeConfig: CustomRouteProps[] = [
   {
     path: [`${pathConfig.chat}/:name`, pathConfig.chat],
     component: ChatPage,
+    exact: true,
+  },
+  {
+    path: [`${pathConfig.chat2}/:name/:room`, pathConfig.chat2],
+    component: Chat2Page,
     exact: true,
   },
   // {

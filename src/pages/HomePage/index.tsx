@@ -10,6 +10,8 @@ interface IProps {
 
 interface IState {
   value: string;
+  value2: string;
+  room2: string;
 }
 
 const connect1: any = connect;
@@ -20,7 +22,9 @@ const connect1: any = connect;
 class HomePage extends Component<IProps, IState> {
 
   state: IState = {
-    value: 'ggg'
+    value: 'ggg',
+    value2: 'aaa',
+    room2: '111',
   }
 
   onJoin = () => {
@@ -29,19 +33,50 @@ class HomePage extends Component<IProps, IState> {
     this.props.history.push(`${pathConfig.chat}/${value}`)
   }
 
+  onJoin2 = () => {
+    const { value2, room2 } = this.state;
+    if (!value2.trim()) return;
+    this.props.history.push(`${pathConfig.chat2}/${value2}/${room2}`)
+  }
+
   render() {
-    const { value } = this.state;
+    const { value, value2, room2 } = this.state;
     return (
       <div className="g-home-page">
-        <Input
-          placeholder="name"
-          value={value}
-          onChange={(e) => {
-            this.setState({ value: e.target.value })
-          }}
-          className="p-input"
-        />
-        <Button type="primary" onClick={this.onJoin}>加入</Button>
+        <div className="p-room1">
+          <Input
+            placeholder="name1"
+            addonBefore="姓名1"
+            value={value}
+            onChange={(e) => {
+              this.setState({ value: e.target.value })
+            }}
+            className="p-input"
+          />
+          <Button type="primary" onClick={this.onJoin}>加入1</Button>
+        </div>
+        <div style={{ marginTop: '100px' }}></div>
+        <div className="p-room1">
+          <Input
+            placeholder="name2"
+            addonBefore="姓名2"
+            value={value2}
+            onChange={(e) => {
+              this.setState({ value2: e.target.value })
+            }}
+            className="p-input"
+          />
+          <Input
+            placeholder="roomId"
+            addonBefore="房间号"
+            value={room2}
+            onChange={(e) => {
+              this.setState({ room2: e.target.value })
+            }}
+            className="p-input"
+          />
+          <Button type="primary" onClick={this.onJoin2}>加入2</Button>
+        </div>
       </div>
     )
   }

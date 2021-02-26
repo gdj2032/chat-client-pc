@@ -27,6 +27,10 @@ class HomePage extends Component<IProps, IState> {
     room2: '111',
   }
 
+  onJoinTCP = () => {
+    this.props.history.push(pathConfig.udp_client)
+  }
+
   onJoin = () => {
     const { value } = this.state;
     if (!value.trim()) return;
@@ -44,6 +48,10 @@ class HomePage extends Component<IProps, IState> {
     return (
       <div className="g-home-page">
         <div className="p-room1">
+          <Button type="primary" onClick={this.onJoinTCP}>UDP/TCP加入</Button>
+        </div>
+        <div style={{ marginTop: '40px' }}></div>
+        <div className="p-room1">
           <Input
             placeholder="name1"
             addonBefore="姓名1"
@@ -55,7 +63,7 @@ class HomePage extends Component<IProps, IState> {
           />
           <Button type="primary" onClick={this.onJoin}>加入1</Button>
         </div>
-        <div style={{ marginTop: '100px' }}></div>
+        <div style={{ marginTop: '40px' }}></div>
         <div className="p-room1">
           <Input
             placeholder="name2"
